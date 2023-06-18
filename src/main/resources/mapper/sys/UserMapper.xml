@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shengming.sys.mapper.UserMapper">
+    <select id="getRoleNameByUserId" resultType="java.lang.String">
+        select x_role.role_name
+        from x_user_role left join x_role on x_user_role.role_id = x_role.role_id
+        where x_user_role.user_id = #{userId}
+    </select>
+</mapper>
